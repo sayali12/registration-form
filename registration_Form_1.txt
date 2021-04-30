@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Page</title>
+
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	     <div class="container"><br>
+	     	<h1 class="text-success text-center"> Register Here </h1>
+	     	<dir class="col-lg-8 m-auto d-block">
+	     		<form action="message.html" onsubmit="return validation()" class="bg-light">
+	     			
+	               <div class="form-group">
+	    <label for="name">First Name </label>
+	    <input type="name" class="form-control" id="ftname" aria-describedby="" placeholder="Enter your First name" autocomplete="off">
+	    <span id="firstname" class="text-danger font-weight-bold"></span>
+	  </div>
+	                           
+	   <div class="form-group">
+	    <label for="name">Last name </label>
+	    <input type="name" class="form-control" id="ltname" aria-describedby="" placeholder="Enter your last name" autocomplete="off">
+	    <span id="lastname" class="text-danger font-weight-bold"></span>
+	  </div>   
+	                           
+	    <div class="form-group">
+	    <label for="gender">Select Gender</label>
+	    <br>
+	    <input type="radio"  id="gender" name="gender"value="male" > Male
+	    <input type="radio"  id="gender" name="gender" value="female" > Female
+	    <input type="radio"  id="gender" name="gender" value="other" > Other
+	    <span id="user_gender" class="text-danger font-weight-bold"></span>
+	 </div>                       
+	   <div class="form-group">
+	    <label for="date">Date of Birth </label>
+	    <input type="date" class="form-control" name="DOB" id="date" aria-describedby=""  placeholder="" autocomplete="off">
+	    <span id="datebirth" class="text-danger font-weight-bold"></span>
+	 </div>
+	    <div class="form-group">
+	    <label for="number">Age </label>
+	    <input type="number" class="form-control" name="age_of_person" id="user_age" aria-describedby="" placeholder="Enter your age" autocomplete="off">
+	    <span id="age" class="text-danger font-weight-bold"></span>
+	 </div>                        
+	                        
+	   <div class="form-group">
+	    <label for="name">Address line 1 </label>
+	    <input type="name" class="form-control" name="Aline1" id="address1" aria-describedby="" placeholder="Enter your address line 1" autocomplete="off">
+	    <span id="Aline1" class="text-danger font-weight-bold"></span>
+	 </div> 
+	   <div class="form-group">
+	    <label for="name">Address line 2 </label>
+	    <input type="name" class="form-control" name="Aline2" id="address2" aria-describedby="" placeholder="Enter your address line 2" autocomplete="off">
+	    <span id="Aline2" class="text-danger font-weight-bold"></span>
+	 </div>                         
+	                           
+	   <div class="form-group">
+	    <label for="">Phone NO </label>
+	    <input type="" class="form-control" id="phoneNumber" name="Phone" aria-describedby="" placeholder="Enter your phone number" autocomplete="off">
+	    <span id="Phone_Number" class="text-danger font-weight-bold"></span>
+	 </div>                         
+	  <div class="form-group">
+	    <label for="">Pin code</label>
+	    <input type="" class="form-control" name="pcode" id="user_pincode" aria-describedby="" placeholder="Enter your pincode" autocomplete="off">
+	    <span id="pincode" class="text-danger font-weight-bold"></span>
+	 </div> 
+	    <div class="form-group">
+	    <label for="name">State</label>
+	    <input type="name" class="form-control" name="state" id="statename" aria-describedby="" placeholder="Enter your state" autocomplete="off">
+	    <span id="state" class="text-danger font-weight-bold"></span>
+	 </div>   
+	  <div class="form-group">
+	    <label for="name">District</label>
+	    <input type="name" class="form-control" name="district" id="districtname" aria-describedby="" placeholder="Enter your district" autocomplete="off">
+	    <span id="district" class="text-danger font-weight-bold"></span>
+	 </div> <form>
+	  <div class="form-group">
+	    <label for="exampleFormControlFile1">Upload your photo</label>
+	    <input type="file" class="form-control-file" id="file">
+	    <span id="photo" class="text-danger font-weight-bold"></span>
+	  </div>
+	  
+	 <button id="sumbit" type="submit" class="btn btn-success">Save</button>
+                   
+	     		</form>
+	           
+
+	     	</div>
+
+	     </div>
+
+
+	<script type="text/javascript">
+
+
+		
+        function validation()
+        {
+
+        	var firstname     = document.getElementById('ftname').value;
+        	var lastname      = document.getElementById('ltname').value;
+        	var user_gender        = document.getElementById('gender').value;
+        	var datebirth = document.getElementById('date').value;
+        	var age           = document.getElementById('user_age').value;
+        	var Aline1     = document.getElementById('address1').value;
+        	var Aline2     = document.getElementById('address2').value;
+         var pincode      = document.getElementById('user_pincode').value;
+         var Phone_Number      = document.getElementById('phoneNumber').value;
+         var state      = document.getElementById('statename').value;
+         var district      = document.getElementById('districtname').value;
+         
+         var photo      = document.getElementById('file').value;
+
+
+            // this is some manadatory fields
+
+
+         if (firstname == "")
+        	{
+        		 document.getElementById('firstname').innerHTML=" Please fill the firstname field ";
+               return false;
+        	}
+
+        	 if ((firstname.length <= 2) || (firstname.length > 20))
+        	{
+        		 document.getElementById('firstname').innerHTML=" user length must be between 2 and 20";
+               return false;
+        	}
+
+        	 if (lastname == "")
+        	{
+        		 document.getElementById('lastname').innerHTML=" Please fill the lastname field ";
+               return false;
+        	}
+
+        	if ((lastname.length <= 2) || (lastname.length > 20))
+        	{
+        		 document.getElementById('lastname').innerHTML=" user length must be between 2 and 20";
+               return false;
+        	}
+
+        	 if (datebirth == "")
+        	{
+        		 document.getElementById('datebirth').innerHTML=" Please fill the date of Birth field ";
+               return false;
+        	}
+        	if ( Age == "")
+        	{
+        		 document.getElementById('user_age').innerHTML=" Please fill the age field ";
+               return false;
+        	}
+        	if (Aline1 == "")
+        	{
+        		 document.getElementById('Aline1').innerHTML=" Please fill the address line 1 field ";
+               return false;
+        	}
+        	
+
+        	if (Aline2 == "")
+        	{
+        		 document.getElementById('Aline2').innerHTML=" Please fill the address line 2 field ";
+               return false;
+        	}
+        	
+        	if (Phone_Number == "")
+        	{
+        		 document.getElementById('Phone_Number').innerHTML=" Please fill the phoneNumber field ";
+               return false;
+        	}
+        	if (Phone_Number.length!=10 ) 
+        	{
+
+                   document.getElementById('Phone_Number').innerHTML=" phoneNumber must be 10 digits ";
+               return false;
+
+
+        	}
+        	if (pincode == "")
+        	{
+        		 document.getElementById('pincode').innerHTML=" Please fill the pincode field ";
+               return false;
+        	}
+        	
+        	
+        	
+
+
+
+
+
+
+
+        }   
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
